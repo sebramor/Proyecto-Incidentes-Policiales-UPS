@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      <link rel="stylesheet" href="css/estilos_investigaciones.css"/>
+      <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
+      <h:outputStylesheet library="font-awesome" name="css/font-awesome.min.css" />
+      <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
+      <meta name="viewport" content="width=divice-width, user-scalable=no,
+      inicial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+      </meta>
+	<h:head>
+</h:head>
+	<h:body>
+
+	<img src="img/logo_policia.png" style="position: absolute; width: 90px;right: 920px;"/>
+	<img src="img/head-dallas.png" style="position: absolute;width: 19%;right: 42%;"/>
+	<img src="img/foot-shape-light-crop.png" style="position: absolute;right: 0%;top:67%"/>
+
+    <p:growl id="messages"/>
+
+    <p:menubar class="menu">
+        <p:menuitem icon="pi pi-home" value="Inicio" url="home.jsf" style="width:150px;height:20px;position:relative"/>
+        
+        <p:submenu label="¿Quiénes Somos?" icon="fa fa-bank" style="width:200px;height:20px;position:relative">
+            <p:menuitem value="Departamento de Policia" url="departamentoPolicia.jsf" icon="pi pi-star" />
+            <p:menuitem value="Desarrolladores" url="desarrolladores.jsf" icon="pi pi-pencil" />
+        </p:submenu>
+
+        <p:submenu label="Noticias" icon="pi pi-calendar" style="width:150px;height:20px;position:relative">
+                <p:menuitem value="Incidentes" url="incidentes.jsf" icon="fa fa-ambulance" update="messages"/>
+                <p:menuitem value="Eventos Internos" url="eventosInternos.jsf" icon="pi pi-bell" update="messages"/>
+      
+        </p:submenu>
+        
+        <p:submenu label="Investigaciones" icon="fa fa-binoculars" style="width:200px;height:20px;position:relative">
+            <p:menuitem value="Criminales" icon="fa fa-bomb" url="invCriminales.jsf" />
+            <p:menuitem value="Estratégicas" icon="fa fa-user-secret" url="invEstrategicas.jsf" />
+        </p:submenu>
+ 
+        <p:menuitem value="Registrar Usuario" url="registrarUsuario.jsf" icon="fa fa-user-plus" style="width:200px;height:20px;position:relative" />
+ 
+        <f:facet name="options">
+            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Buscar en el sitio"/>
+            <p:commandButton type="button" value="Iniciar Sesión" icon="fa fa-user" ajax="false" />
+        </f:facet>
+    </p:menubar>
+   
+   <p:button icon="fa fa-facebook" style="margin-left:1200px; ;background:none;" title="Icon Only">
+    <f:param name="productId" value="30" />
+</p:button>
+ 
+ <p:button icon="fa fa-instagram" style="margin-left:20px;background:none;" title="Icon Only">
+    <f:param name="productId" value="30" />
+</p:button>
+
+ <p:button icon="fa fa-twitter" style="margin-left:20px;background:none;" title="Icon Only">
+    <f:param name="productId" value="30" />
+</p:button>
+
+ <p:button icon="fa fa-youtube" style="margin-left:20px;background:none;" title="Icon Only">
+    <f:param name="productId" value="30" />
+</p:button>
+    <br />
+    <br />
+    <br />
+    <br />
+<h:form>
+		<p:panel id="panel" header="Estratégicos" 
+			style="text-align: center; height:1900px;position:relative ">
+			<p:messages id="msgs" />
+
+			<h1 style="text-align: center;">
+				<strong> 
+				   <font style="vertical-align: inherit;"> 
+				     <font style="vertical-align: inherit;">Planes estratégicos</font>
+				   </font>
+				</strong>
+			</h1>
+			
+
+			<h:panelGrid columns="3" cellpadding="5">
+				<p:inputText id="txtincidente" placeholder="Conocer plan estratégico..." 
+				 style="position: relative; width: 450px;right: -400px;">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+			</h:panelGrid>
+            
+            <p:commandButton value="Buscar" update="panel"
+				action="#" icon="pi pi-search" />
+            <br />
+            <br />
+            <div class="contenedor">
+               <div class="card">
+                  <img src="img/desarticular.jpg"></img>
+                  <h1>Desarticulación de bandas</h1>
+					<p>Oficiales del Departamento de Aduanas y Protección
+						Fronteriza de los Estados Unidos (CBP) asignados al puerto de
+						entrada de Ysleta incautaron varios paquetes de metanfetamina y
+						fentanilo atados al cuerpo de un adolescente de 13 años.</p>
+					<a href="#">Leer más...</a>
+				</div>
+				<div class="card">
+                  <img src="img/fraude.jpg"></img>
+                  <h1>Prevención de fraudes</h1>
+					<p>Ante la crisis sanitaria desatada por la epidemia del
+						coronavirus, algunas personas sin escrúpulos han puesto en marcha
+						una estrategia ilegal para tratar de aprovecharse de la situación.</p>
+					<a href="#">Leer más...</a>
+				</div>
+				<div class="card">
+                  <img src="img/crimen.jpg"></img>
+                  <h1>Seguimiento de crimen organizado</h1>
+					<p>El fiscal general de Estados Unidos, William Barr, y Timothy
+						J. Shea, director en funciones de la Agencia Antidrogas DEA,
+						anunciaron el resultado de un operativo que dio un "duro golpe" a
+						los principales centros de distribución de los cárteles mexicanos
+						en el país.</p>
+					<a href="#">Leer más...</a>
+				</div>
+				<div class="card">
+                  <img src="img/delito.jpg"></img>
+                  <h1>Seguimiento por delito</h1>
+					<p>Un gran jurado de una corte federal de Estados Unidos del
+						Distrito Este en Texas, acusaron e impusieron cargos por delitos
+						de pornografia infantil a dos hombres a los cuales les decomisaron
+						fotos y videos de menores.</p>
+					<a href="#">Leer más...</a>
+				</div>
+				<div class="card">
+                  <img src="img/asesinato.jpg"></img>
+                  <h1>Seguimiento por asesinato</h1>
+					<p>Investigadores con el Departamento de Policía de Dallas
+						respondieron a una llamada sobre un incendio en las cercanías de
+						Huey Street y Elsie Faye Heggins Street.</p>
+					<a href="#">Leer más...</a>
+				</div>
+			</div>
+		</p:panel>
+		
+	</h:form>
+</h:body>
+</html>
