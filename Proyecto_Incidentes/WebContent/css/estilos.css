@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+*{
+	font-family: 'Segoe UI';
+}
+
+.menu
+{
+	position: absolute;
+	top: 100px;
+}
+

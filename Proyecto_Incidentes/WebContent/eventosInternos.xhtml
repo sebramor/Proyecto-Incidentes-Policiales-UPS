@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<img src="img/logo_policia.png" style="position: absolute; width: 90px;right: 920px;"/>
+	<img src="img/head-dallas.png" style="position: absolute;width: 19%;right: 42%;"/>
+	<img src="img/foot-shape-light-crop.png" style="position: absolute;right: 0%;top:180%"/>
+
+    <p:growl id="messages"/>
+
+    <p:menubar class="menu">
+        <p:menuitem icon="pi pi-home" value="Inicio" url="home.jsf" style="width:150px;height:20px;position:relative"/>
+        
+        <p:submenu label="¿Quiénes Somos?" icon="fa fa-bank" style="width:200px;height:20px;position:relative">
+            <p:menuitem value="Departamento de Policia" url="departamentoPolicia.jsf" icon="pi pi-star" />
+            <p:menuitem value="Desarrolladores" url="desarrolladores.jsf" icon="pi pi-pencil" />
+        </p:submenu>
+
+        <p:submenu label="Noticias" icon="pi pi-calendar" style="width:150px;height:20px;position:relative">
+                <p:menuitem value="Incidentes" url="incidentes.jsf" icon="fa fa-ambulance" update="messages"/>
+                <p:menuitem value="Eventos Internos" url="eventosInternos.jsf" icon="pi pi-bell" update="messages"/>
+      
+        </p:submenu>
+        
+        <p:submenu label="Investigaciones" icon="fa fa-binoculars" style="width:200px;height:20px;position:relative">
+            <p:menuitem value="Criminales" icon="fa fa-bomb" url="invCriminales.jsf" />
+            <p:menuitem value="Estratégicas" icon="fa fa-user-secret" url="invEstrategicas.jsf" />
+        </p:submenu>
+ 
+        <p:menuitem value="Registrar Usuario" url="registrarUsuario.jsf" icon="fa fa-user-plus" style="width:200px;height:20px;position:relative" />
+ 
+        <f:facet name="options">
+            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Buscar en el sitio"/>
+            <p:commandButton type="button" value="Iniciar Sesión" icon="fa fa-user" ajax="false" />
+        </f:facet>
+    </p:menubar>
+   
+   <p:button icon="fa fa-facebook" style="margin-left:1200px; ;background:none;" title="Icon Only">
+    <f:param name="productId" value="30" />
+</p:button>
+ 
+ <p:button icon="fa fa-instagram" style="margin-left:20px;background:none;" title="Icon Only">
+    <f:param name="productId" value="30" />
+</p:button>
+
+ <p:button icon="fa fa-twitter" style="margin-left:20px;background:none;" title="Icon Only">
+    <f:param name="productId" value="30" />
+</p:button>
+
+ <p:button icon="fa fa-youtube" style="margin-left:20px;background:none;" title="Icon Only">
+    <f:param name="productId" value="30" />
+</p:button>
+	</h:form>
+
+	<div class="Info_depa" style="position: static; padding: 10% 5% 5% 5%">
+		<div class="cabecera" style="position: static;">
+			<img src="img/programas.jpeg"
+				style="padding: 0% 0% 0% 30%; position: static; width: 40%; height: 40%" />
+			<h2>Programas</h2>
+			<p>
+				La Oficina de Asuntos Comunitarios y Comunicaciones de los Empleados
+				dirige y desarrolla programas de seguridad iniciados para satisfacer
+				las necesidades de la comunidad. <br /> <br /> Los programas
+				educativos incluyen: <br /> (Disponible en varios idiomas)
+			</p>
+			<table cellspacing="0" style="width: 100%; height: 345px;">
+				<tbody>
+					<tr>
+						<td style="width: 232px; height: 51px;">9-1-1 Educación</td>
+						<td style="width: 273px; height: 51px;">Seguridad de los
+							niños (niños en edad escolar)</td>
+						<td style="width: 273px; height: 51px;">​Seguridad de los
+							padres y los niños</td>
+					</tr>
+					<tr>
+						<td style="width: 232px; height: 51px;">Prevención de la
+							violencia familiar</td>
+						<td style="width: 273px; height: 51px;">Prevención de estafas
+							y fraudes</td>
+						<td style="width: 273px; height: 51px;">​Seguridad en
+							Halloween</td>
+					</tr>
+					<tr>
+						<td style="width: 232px;">​Seguridad en las vacaciones</td>
+						<td>Seguridad personal (Mayores)</td>
+						<td>​Prevención de robos</td>
+					</tr>
+					<tr>
+						<td style="width: 232px;">​Prevención de la agresión sexual</td>
+						<td>​Seguridad personal en el lugar de trabajo</td>
+						<td>​ Exposición de coches patrulla</td>
+					</tr>
+					<tr>
+						<td style="width: 232px;">​ Peligro de extraños</td>
+						<td>​Bullying</td>
+						<td>​Concientización sobre las drogas</td>
+					</tr>
+					<tr>
+						<td style="width: 232px;">Seguridad de los medios
+							sociales/acoso cibernético</td>
+						<td>Conozca al DPD (Introducción al DPD)</td>
+						<td>​Interactuar con la policía</td>
+					</tr>
+					<tr>
+						<td style="width: 232px;">​Seguridad de los medicamentos con
+							receta</td>
+						<td>​Seguridad en Internet</td>
+						<td>​Conducción/Cinturón de seguridad</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<h3>Programas de prevención del crimen</h3>
+			<ul>
+				<li>La Noche Pre-Nacional de Tyrone-Farnsworth</li>
+				<li>National Night Out (celebrado en toda la ciudad el primer
+					martes de octubre)</li>
+				<li>Programa de Vigilancia del Crimen en Negocios y Vecindarios
+				</li>
+				<li>Encuesta comunitaria para la evaluación de las necesidades
+					de la comunidad</li>
+			</ul>
+
+
+			<h3>Programas de radio</h3>
+			<ul>
+				<li>El personal de Asuntos Comunitarios puede ser escuchado
+					discutiendo temas relacionados con la policía en las siguientes
+					estaciones:</li>
+				<li>KHVN-Heaven 97AM -- Gerente Joli Robinson, cada dos viernes
+					12pm-1pm</li>
+				<li>DKnet-Dallas Korean Radio 730AM ---&nbsp; Outreach Rep E. Kim  &amp;
+					Officer S. Nam, mensual</li>
+			</ul>
+
+		</div>
+
+	</div>
+
+
+</h:body>
+
+</html>
