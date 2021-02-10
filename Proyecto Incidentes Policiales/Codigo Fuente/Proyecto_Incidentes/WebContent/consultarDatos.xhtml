@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+<h:head>
+<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<title>Dallas - Texas</title>
+</h:head>
+<h:body>
+	<h:form>
+		<img src="img/foot-shape-light-crop.png"
+			style="position: absolute; right: 0%; top: 67%" />
+		<p:growl id="messages" showDetail="true" />
+
+		<p
+			style="font-family: 'Segoe UI'; position: absolute; top: 20px; right: 190px; font-weight: bold;">Michael
+			Robles</p>
+		<p
+			style="font-family: 'Segoe UI'; position: absolute; top: 40px; right: 192px;">Administrador</p>
+		<img
+			style="position: absolute; width: 5%; border-radius: 75px; right: 6%; top: 3%"
+			src="img/mike.jpg" />
+		<img
+			style="position: absolute; width: 5.5%; border-radius: 75px; right: 77%; top: 2%"
+			src="img/logo_policia.png" />
+		<img
+			style="position: absolute; width: 15%; border-radius: 75px; right: 62%; top: 3%"
+			src="img/head-dallas.png" />
+		<p:panel
+			style="width:10%; height:15%; top: 0%; position:absolute; width: 1275px; right: 0%; border-radius: 0px;border: line; z-index:-100; box-shadow:5px 5px 5px #d3d3d3;">
+			<iframe
+				src="http://free.timeanddate.com/clock/i7nd34er/n190/tlec4/tct/pct/tt0"
+				frameborder="0" width="295" height="19"
+				style="position: absolute; right: 12%; top: 70%"
+				allowTransparency="true"></iframe>
+
+		</p:panel>
+		<p:slideMenu style="position:absolute;top: 23%; width: 200px; right: 86%; border-radius: 0px; border:none" >
+ 		<p:menuitem style="margin: 4px " value="Inicio" icon="fa fa-home" url="menuAdministrador.jsf"/>
+        <p:menuitem style="margin: 4px " value="Configurar Cuenta" icon="fa fa-user" url="actualizarDatosAdministrador.jsf"/>
+        <p:menuitem style="margin: 4px " value="Auditoria" icon="fa fa-folder-open" url="auditoria.jsf"/>
+        <p:menuitem style="margin: 4px " value="Crear Usuario" icon="fa fa-user-plus" url="registrarUsuario.jsf"/>
+        <p:menuitem style="margin: 4px " value="Consultar Usuario" ajax="false" icon="fa fa-search" url="consultarDatos.jsf" />
+        <p:menuitem style="margin: 4px "  value="Bloquear Usuario" icon="fa fa-lock " url="bloquearUsuarios.jsf" />
+        <p:menuitem style="margin: 4px "  value="Eliminar Usuario" icon="fa fa-user-times" url="eliminarUsuarios.jsf"/>
+        <p:menuitem style="margin: 4px "  value="Modificar Usuario" icon="fa fa-edit" url="actualizarDatos.jsf" />
+       <p:menuitem style="margin: 4px " value="Cerrar Sesión" icon="fa fa-sign-out" url="iniciarSesion.jsf" />
+            
+    </p:slideMenu>
+	
+
+	<script type="text/javascript">
+  /* function skinRadarChart() {
+        Chart.defaults.global.startAngle = 36;
+        Chart.defaults.global.tooltips.cornerRadius = 3;
+        Chart.defaults.global.tooltips.enabled = true;
+        Chart.defaults.global.tooltips.mode = 'point';
+        Chart.defaults.global.tooltips.position = 'nearest';
+    }*/
+</script>
+
+		<p:dataTable id="tbl"
+			style="width: 60%; position: absolute; top: 28%; right: 20%" var="p"
+			value="#{registrado.lista_registrados}"	>
+			<p:column headerText="Cédula">
+				<p:outputLabel value="#{p.cedula}" />
+			</p:column>
+
+			<p:column headerText="Nombre">
+				<p:outputLabel value="#{p.nombre}" />
+			</p:column>
+			
+			<p:column headerText="Apellido">
+				<p:outputLabel value="#{p.apellido}" />
+			</p:column>
+
+			<p:column headerText="Ciudad">
+				<p:outputLabel value="#{p.ciudad}" />
+			</p:column>
+			
+			<p:column headerText="Edad">
+				<p:outputLabel value="#{p.edad}" />
+			</p:column>
+
+			<p:column headerText="Celular">
+				<p:outputLabel value="#{p.celular}" />
+			</p:column>
+			
+			<p:column style="width: 25%" headerText="Correo">
+				<p:outputLabel value="#{p.correo}" />
+			</p:column>
+
+		</p:dataTable>
+		
+		<p:dataTable id="tbl2"
+			style="width: 15%; position: absolute; top: 28%; right: 5%" var="p2"
+			value="#{login.lista_usuarios}">
+			<p:column headerText="Estado">
+				<p:outputLabel value="#{p2.tipo}" />
+			</p:column>
+
+		</p:dataTable>
+	
+
+	
+	<h:commandButton title="Hola" image="img/bell.png"
+		style="outline:none;position: absolute; right: 21%; width: 2%; top: 5%" />
+	<h1
+		style="background-color: red; width: 1%; right: 21%; position: absolute; text-align: center; color: white; border-radius: 80%; font-size: 13px; top: 27px; font-family: arial">2</h1>
+
+	<h:commandButton title="Hola" image="img/correo.png"
+		style="outline:none;position: absolute; right: 25%; width: 2%; top: 5%" />
+	<h1
+		style="background-color: red; width: 1%; right: 24.5%; position: absolute; text-align: center; color: white; border-radius: 80%; font-size: 13px; top: 27px; font-family: arial">6</h1>
+</h:form>
+</h:body>
+</html>

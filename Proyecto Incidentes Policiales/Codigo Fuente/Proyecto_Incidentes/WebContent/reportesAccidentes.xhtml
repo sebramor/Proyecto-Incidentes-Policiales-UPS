@@ -2,7 +2,110 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      <h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+<h:head>
+<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<title>Dallas - Texas</title>
+</h:head>
+<h:body>
+<h:form>
+ <p:growl id="messages" showDetail="true"/>
+<img style="position:absolute; width: 5%; border-radius: 75px; right: 6%;top:3%" src="img/usuario.jpg"/>
+<img style="position:absolute; width: 5.5%; border-radius: 75px; right: 77%;top:2%" src="img/logo_policia.png"/>
+<img style="position:absolute; width: 15%; border-radius: 75px; right: 62%;top:3%" src="img/head-dallas.png"/>
+ <p:panel style="width:10%; height:15%; top: 0%; position:absolute; width: 1275px; right: 0%; border-radius: 0px;border: line; z-index:-100; box-shadow:5px 5px 5px #d3d3d3;">
+<iframe src="http://free.timeanddate.com/clock/i7nd34er/n190/tlec4/tct/pct/tt0" frameborder="0" width="295" height="19" style="position: absolute;right: 12%;top: 70%" allowTransparency="true"></iframe>
 
-	
+ </p:panel>
+  <p:slideMenu style="position:absolute;top: 23%; width: 200px; right: 86%; border-radius: 0px; border:none" >
+        <p:menuitem style="margin: 4px " value="Configurar Cuenta" update="messages" icon="fa fa-user" />
+        <p:menuitem style="margin: 4px " value="Investigaciones" icon="fa fa-search-plus"/>
+        <p:menuitem style="margin: 4px " value="Accidentes" icon="fa fa-road"/>
+        <p:menuitem style="margin: 4px "  value="Desorden" icon="fa fa-beer"/>
+        <p:menuitem style="margin: 4px "  value="Incendios" icon="fa fa-fire-extinguisher "/>
+        <p:menuitem style="margin: 4px "  value="Intimidación" icon="fa fa-female"/>
+        <p:menuitem style="margin: 4px "  value="Muertes" icon="fa fa-universal-access"/>
+        <p:menuitem style="margin: 4px "  value="Narcotráfico" icon="fa fa-linode"/>
+        <p:menuitem style="margin: 4px "  value="Propiedades" icon="fa fa-home"/>
+         <p:menuitem style="margin: 4px " value="Robo" icon="fa fa-user-secret"/>
+         <p:menuitem style="margin: 4px "  value="Violencia" icon="fa fa-low-vision"/>
+          <p:menuitem style="margin: 4px "  value="Otros reportes" icon="fa fa-ambulance "/>
+        <p:menuitem style="margin: 4px " value="Cerrar Sesión" icon="fa fa-sign-out"/>
+       
+    </p:slideMenu>   
+    
+     <p:panel id="hpnl" style="background: linear-gradient(to bottom right, #566573 , #212F3D  );;width:10%; height:10%; top: 20%; position:absolute; width: 350px; right: 3%; border-radius: 0px;z-index:-100; border-radius: 5px;">
+ <img style="width: 24%" src="img/choque.png"></img>
+ <p style="color:white;position: absolute; top: 30%; right: 8%; font-weight: bold;">Total reportes accidentes</p>
+  <p style="color:white;position: absolute; top: -25px ; right: 35%;font-size: 30px">59</p>
+ </p:panel> 
+ <p:draggable for="hpnl" axis="x"/>
+
+</h:form>
+  
+<div class="card" style="position: absolute; right: 3%; width: 25%;top: 34%">
+    <h:form>
+        <p:lineChart model="#{barra.lineModel}" style="width: 100%; height: 300px;"/>
+    </h:form>
+</div>
+ 
+ <script type="text/javascript">
+    function skinRadarChart() 
+    {
+        Chart.defaults.global.startAngle = 36;
+        Chart.defaults.global.tooltips.cornerRadius = 3;
+        Chart.defaults.global.tooltips.enabled = true;
+        Chart.defaults.global.tooltips.mode = 'point';
+        Chart.defaults.global.tooltips.position = 'nearest';
+    }
+</script>
+
+<!-- Ejemplo 2 <div class="card" style="position: absolute; right: 57.5%; width: 25%;top: 32%;">
+    <p:radarChart model="#{radar.radarModel2}"/>
+</div> -->
+ 
+<h:commandButton title="Hola" image="img/bell.png" style="outline:none;position: absolute; right: 21%; width: 2%; top: 5%"/>
+<h1 style="background-color:red; width: 1%;right:21%;position:absolute; text-align: center; color:white; border-radius: 80%; font-size: 13px;top:27px;font-family:arial">2</h1>
+
+<h:commandButton title="Hola" image="img/correo.png" style="outline:none;position: absolute; right: 25%; width: 2%; top: 5%"/>
+<h1 style="background-color:red; width: 1%;right:24.5%;position:absolute; text-align: center; color:white; border-radius: 80%; font-size: 13px;top:27px;font-family:arial">6</h1>
+ <div class="card">
+        <p:dataTable style="width: 55%; position: absolute; top: 28%; right: 29%" var="product" value="#{dtBasicView.products}">
+            <p:column headerText="Code">
+                <h:outputText value="#{product.code}" />
+            </p:column>
+
+            <p:column headerText="Name">
+                <h:outputText value="#{product.name}" />
+            </p:column>
+
+            <p:column headerText="Category">
+                <h:outputText value="#{product.category}" />
+            </p:column>
+
+            <p:column headerText="Quantity">
+                <h:outputText value="#{product.quantity}" />
+            </p:column>
+        </p:dataTable>
+    </div>
+    <h:commandButton title="Hola" image="img/icono-pdf.png" style="outline:none;position: absolute; right: 15%; width: 4%; top: 80%"/>
+    
+    
+    <span class="ui-input-icon-left" style="position: absolute; top: 20%; right: 82%;">
+        <i class="pi pi-search" style="color:#B3B6B7;font-size: 25px"/>
+        <p:inputText placeholder="Buscar palabra clave" style="position: absolute ;width: 250px" />
+    </span>
+    <div class="p-field p-col-12 p-md-4" style="position:absolute; right: 47%;top:20%">
+   <i class="pi pi-calendar" style="color:#B3B6B7;font-size: 25px"/>
+                <p:datePicker id="navigator" placeholder="Buscar por fecha" value="#{calendarView.date2}" monthNavigator="true" yearNavigator="true"/>
+      </div>
+     
+        <p:selectCheckboxMenu id="menu" value="#{checkboxView.selectedCities}" label="Buscar por tipo" style="width: 15rem; position: absolute; right: 30%; top: 20.5%"
+                                filter="true" filterMatchMode="startsWith" panelStyle="width: 15rem" scrollHeight="250">
+            <f:selectItems value="#{checkboxView.cities}"/>
+        </p:selectCheckboxMenu>
+</h:body>
 </html>
