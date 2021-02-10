@@ -11,6 +11,8 @@
 	name="css/font-awesome.min.css" />
 <h:outputStylesheet name="primeicons/primeicons.css"
 	library="primefaces" />
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<title>Dallas - Texas</title>
 <meta name="viewport"
 	content="width=divice-width, user-scalable=no,
       inicial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
@@ -29,45 +31,39 @@
 	<p:growl id="messages" />
 
 	<p:menubar class="menu">
-		<p:menuitem icon="pi pi-home" value="Inicio" url="home.jsf"
-			style="width:150px;height:20px;position:relative" />
+			<p:menuitem icon="pi pi-home" value="Inicio" url="home.jsf"
+				style="width:150px;height:20px;position:relative" />
 
-		<p:submenu label="¿Quiénes Somos?" icon="fa fa-bank"
-			style="width:200px;height:20px;position:relative">
-			<p:menuitem value="Departamento de Policia"
-				url="departamentoPolicia.jsf" icon="pi pi-star" />
-			<p:menuitem value="Desarrolladores" url="desarrolladores.jsf"
-				icon="pi pi-pencil" />
-		</p:submenu>
+			<p:submenu label="¿Quiénes Somos?" icon="fa fa-bank"
+				style="width:200px;height:20px;position:relative">
+				<p:menuitem value="Departamento de Policia"
+					url="departamentoPolicia.jsf" icon="pi pi-star" />
+				<p:menuitem value="Desarrolladores" url="desarrolladores.jsf"
+					icon="pi pi-pencil" />
+			</p:submenu>
 
-		<p:submenu label="Noticias" icon="pi pi-calendar"
-			style="width:150px;height:20px;position:relative">
-			<p:menuitem value="Incidentes" url="incidentes.jsf"
-				icon="fa fa-ambulance" update="messages" />
-			<p:menuitem value="Eventos Internos" url="eventosInternos.jsf"
-				icon="pi pi-bell" update="messages" />
+			<p:submenu label="Noticias" icon="pi pi-calendar"
+				style="width:125px;height:20px;position:relative; right: -20px">
+				<p:menuitem value="Incidentes" url="incidentes.jsf"
+					icon="fa fa-ambulance" update="messages" />
+				<p:menuitem value="Eventos Internos" url="eventosInternos.jsf"
+					icon="pi pi-bell" update="messages" />
 
-		</p:submenu>
+			</p:submenu>
 
-		<p:submenu label="Investigaciones" icon="fa fa-binoculars"
-			style="width:200px;height:20px;position:relative">
-			<p:menuitem value="Criminales" icon="fa fa-bomb"
-				url="invCriminales.jsf" />
-			<p:menuitem value="Estratégicas" icon="fa fa-user-secret"
-				url="invEstrategicas.jsf" />
-		</p:submenu>
+			<p:submenu label="Investigaciones" icon="fa fa-binoculars"
+				style="width:170px;height:20px;position:relative; right: -60px">
+				<p:menuitem value="Criminales" icon="fa fa-bomb"
+					url="invCriminales.jsf" />
+				<p:menuitem value="Estratégicas" icon="fa fa-user-secret"
+					url="invEstrategicas.jsf" />
+			</p:submenu>
+			
+			<p:menuitem icon="fa fa-user" value="Iniciar Sesión" url="iniciarSesion.jsf"
+				style="width:150px;height:20px;position:relative;right: -600px; border-radius: 5px; background-color: rgb(1,133,200) ; color:white" />
 
-		<p:menuitem value="Registrar Usuario" url="registrarUsuario.jsf"
-			icon="fa fa-user-plus"
-			style="width:200px;height:20px;position:relative" />
-
-		<f:facet name="options">
-			<p:inputText style="margin:1px 10px 1px 1px;"
-				placeholder="Buscar en el sitio" />
-			<p:commandButton type="button" value="Iniciar Sesión"
-				icon="fa fa-user" ajax="false" />
-		</f:facet>
-	</p:menubar>
+			
+		</p:menubar>
 
 	<p:button icon="fa fa-facebook"
 		style="margin-left:1200px; ;background:none;" title="Icon Only">

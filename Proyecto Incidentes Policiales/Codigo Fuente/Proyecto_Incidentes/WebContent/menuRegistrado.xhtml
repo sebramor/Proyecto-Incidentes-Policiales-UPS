@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      <h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<link rel="stylesheet" href="css/estilosImagenes.css" />
+<h:head>
+<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<title>Dallas - Texas</title>
+</h:head>
+<h:body>
+<h:form>
+ <p:growl id="messages" showDetail="true"/>
+
+<h:commandButton title="Hola" image="img/bell.png"
+		style="outline:none;position: absolute; right: 21%; width: 2%; top: 5%" />
+	<h1
+		style="background-color: red; width: 1%; right: 21%; position: absolute; text-align: center; color: white; border-radius: 80%; font-size: 13px; top: 27px; font-family: arial">2</h1>
+
+	<h:commandButton title="Hola" image="img/correo.png"
+		style="outline:none;position: absolute; right: 25%; width: 2%; top: 5%" />
+	<h1
+		style="background-color: red; width: 1%; right: 24.5%; position: absolute; text-align: center; color: white; border-radius: 80%; font-size: 13px; top: 27px; font-family: arial">6</h1>
+<p style="font-family: 'Segoe UI';position:absolute; top: 20px; right: 190px;font-weight: bold;">#{login.nombreUsuario()}</p>
+<p style="font-family: 'Segoe UI';position:absolute; top: 40px; right: 192px;">#{login.consultarUsuario()}</p>
+<img style="position:absolute; width: 5%; border-radius: 75px; right: 6%;top:3%" src="img/usuario.jpg"/>
+<img style="position:absolute; width: 5.5%; border-radius: 75px; right: 77%;top:2%" src="img/logo_policia.png"/>
+<img style="position:absolute; width: 15%; border-radius: 75px; right: 62%;top:3%" src="img/head-dallas.png"/>
+ <p:panel style="width:10%; height:15%; top: 0%; position:absolute; width: 1275px; right: 0%; border-radius: 0px;border: line; z-index:-100; box-shadow:5px 2px 5px black;">
+<iframe src="http://free.timeanddate.com/clock/i7nd34er/n190/tlec4/tct/pct/tt0" frameborder="0" width="295" height="19" style="position: absolute;right: 12%;top: 70%" allowTransparency="true"></iframe>
+
+ </p:panel>
+  <p:slideMenu style="position:absolute;top: 23%; width: 200px; right: 86%; border-radius: 0px; border:none" >
+   		<p:menuitem style="margin: 4px " value="Inicio" icon="fa fa-home" url="menuRegistrado.jsf"/>
+        <p:menuitem style="margin: 4px " value="Configurar Cuenta" update="messages" icon="fa fa-user" url="actualizarDatosRegistrado.jsf" />
+        <p:menuitem style="margin: 4px " value="Reportes Generales" icon="fa fa-folder-open" url="reportesGenerales.jsf"/>
+        <p:menuitem style="margin: 4px " value="Reportes Categoría" icon="fa fa-folder-open" url="reportesCategoria.jsf"/>
+        <p:menuitem style="margin: 4px " value="Reportes Gráficos" icon="fa fa-pie-chart" url="reportesGraficos.jsf" />
+        <p:menuitem style="margin: 4px " value="Cerrar Sesión" icon="fa fa-sign-out" url="iniciarSesion.jsf" />
+    </p:slideMenu>   
+     <img  style="position:absolute;width: 40%; top: 72%; right: 0%" src="img/bienvenida.png" />
+     <img  style="z-index: -200;position:absolute;width: 83%; top: 16%;height: 84%; right: 0%" src="img/fondo.jpg" />
+      <img class="carro" style="position:absolute;width: 40%; top: 23%; right: 35%" src="img/policias.png" />
+    </h:form>
+ </h:body>
+</html>

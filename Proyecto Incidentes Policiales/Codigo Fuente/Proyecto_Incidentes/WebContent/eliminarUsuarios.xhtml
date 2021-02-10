@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+ <h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+<h:head>
+<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<title>Dallas - Texas</title>
+</h:head>	
+	
+<h:body>
+<h:form>
+ <p:growl id="messages" showDetail="true"/>
+<img src="img/foot-shape-light-crop.png" style="position: absolute;right: 0%;top:67%"/>
+<p style="font-family: 'Segoe UI';position:absolute; top: 20px; right: 190px;font-weight: bold;">Michael Robles</p>
+<p style="font-family: 'Segoe UI';position:absolute; top: 40px; right: 192px;">Administrador</p>
+<img style="position:absolute; width: 5%; border-radius: 75px; right: 6%;top:3%" src="img/mike.jpg"/>
+<img style="position:absolute; width: 5.5%; border-radius: 75px; right: 77%;top:2%" src="img/logo_policia.png"/>
+<img style="position:absolute; width: 15%; border-radius: 75px; right: 62%;top:3%" src="img/head-dallas.png"/>
+ <p:panel style="width:10%; height:15%; top: 0%; position:absolute; width: 1275px; right: 0%; border-radius: 0px;border: line; z-index:-100; box-shadow:5px 5px 5px #d3d3d3;">
+<iframe src="http://free.timeanddate.com/clock/i7nd34er/n190/tlec4/tct/pct/tt0" frameborder="0" width="295" height="19" style="position: absolute;right: 12%;top: 70%" allowTransparency="true"></iframe>
+
+ </p:panel>
+<p:slideMenu style="position:absolute;top: 23%; width: 200px; right: 86%; border-radius: 0px; border:none" >
+ 		<p:menuitem style="margin: 4px " value="Inicio" icon="fa fa-home" url="menuAdministrador.jsf"/>
+        <p:menuitem style="margin: 4px " value="Configurar Cuenta" icon="fa fa-user" url="actualizarDatosAdministrador.jsf"/>
+        <p:menuitem style="margin: 4px " value="Auditoria" icon="fa fa-folder-open" url="auditoria.jsf"/>
+        <p:menuitem style="margin: 4px " value="Crear Usuario" icon="fa fa-user-plus" url="registrarUsuario.jsf"/>
+        <p:menuitem style="margin: 4px " value="Consultar Usuario" ajax="false" icon="fa fa-search" url="consultarDatos.jsf" />
+        <p:menuitem style="margin: 4px "  value="Bloquear Usuario" icon="fa fa-lock " url="bloquearUsuarios.jsf" />
+        <p:menuitem style="margin: 4px "  value="Eliminar Usuario" icon="fa fa-user-times" url="eliminarUsuarios.jsf"/>
+        <p:menuitem style="margin: 4px "  value="Modificar Usuario" icon="fa fa-edit" url="actualizarDatos.jsf" />
+       <p:menuitem style="margin: 4px " value="Cerrar Sesión" icon="fa fa-sign-out" url="iniciarSesion.jsf" />
+            
+    </p:slideMenu>
+   
+<p:panel id="panel" header="Eliminar Usuario" style="position: absolute; top: 240px; right: 40%">
+<h:panelGrid columns="3" cellpadding="5">
+<p:outputLabel for="txtCedula" value="Ingrese la cédula:"/>
+<p:inputText requiredMessage="El campo es obligatorio"
+					id="txtCedula" value="#{userdel.cedula}" required="true"
+					label="Cédula">
+<p:message for="txtCedula" style="color:red"></p:message>
+</p:inputText>
+    <p:commandButton value="Eliminar" update="panel" action="#{userdel.eliminarUsuario()}" icon="pi pi-trash" >
+		 <p:confirm header="Confirmación" message="¿Estás seguro de eliminar el usuario?" icon="pi pi-exclamation-triangle"/>   
+    </p:commandButton>
+</h:panelGrid>
+
+</p:panel>
+
+ </h:form> 
+ <h:commandButton title="Hola" image="img/bell.png" style="outline:none;position: absolute; right: 21%; width: 2%; top: 5%"/>
+<h1 style="background-color:red; width: 1%;right:21%;position:absolute; text-align: center; color:white; border-radius: 80%; font-size: 13px;top:27px;font-family:arial">5</h1>
+ <h:commandButton title="Hola" image="img/correo.png" style="outline:none;position: absolute; right: 25%; width: 2%; top: 5%"/>
+<h1 style="background-color:red; width: 1%;right:24.5%;position:absolute; text-align: center; color:white; border-radius: 80%; font-size: 13px;top:27px;font-family:arial">9</h1>
+ 
+ <h:form>
+<p:confirmDialog global="true">
+        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+</p:confirmDialog>
+</h:form>
+</h:body>	
+</html>
