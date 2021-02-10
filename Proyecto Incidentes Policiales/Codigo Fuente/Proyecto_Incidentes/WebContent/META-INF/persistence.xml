@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="Proyecto_Incidentes_Policiales" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.police.modelo.DimApartamento</class>
+		<class>com.police.modelo.DimCiudadDivision</class>
+		<class>com.police.modelo.DimCrimVict</class>
+		<class>com.police.modelo.DimFecha</class>
+		<class>com.police.modelo.DimIncidenteLlamada</class>
+		<class>com.police.modelo.DimOficialInvestigacion</class>
+		<class>com.police.modelo.Registrado</class>
+		<class>com.police.modelo.Usuario</class>
+		<class>com.police.modelo.Auditoria</class>
+		<class>com.police.modelo.VistaReporte</class>
+		<class>com.police.modelo.FactIncidente</class>
+		<class>com.police.modelo.FactIncidentePK</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/POLICIA_DIMENSIONAL"/>
+			<property name="javax.persistence.jdbc.user" value="postgres"/>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+			<property name="javax.persistence.jdbc.password" value="152056"/>
+		</properties>
+	</persistence-unit>
+</persistence>
