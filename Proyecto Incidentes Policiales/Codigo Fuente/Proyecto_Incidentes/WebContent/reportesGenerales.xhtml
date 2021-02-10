@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+<h:head>
+<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<title>Dallas - Texas</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:growl id="messages" showDetail="true" />
+
+<p style="font-family: 'Segoe UI';position:absolute; top: 20px; right: 190px;font-weight: bold;">#{login.nombreUsuario()}</p>
+<p style="font-family: 'Segoe UI';position:absolute; top: 40px; right: 192px;">#{login.consultarUsuario()}</p>
+<img style="position:absolute; width: 5%; border-radius: 75px; right: 6%;top:3%" src="img/usuario.jpg"/>
+		<img
+			style="position: absolute; width: 5.5%; border-radius: 75px; right: 77%; top: 2%"
+			src="img/logo_policia.png" />
+		<img
+			style="position: absolute; width: 15%; border-radius: 75px; right: 62%; top: 3%"
+			src="img/head-dallas.png" />
+		 <p:panel style="width:10%; height:15%; top: 0%; position:absolute; width: 1275px; right: 0%; border-radius: 0px;border: line; z-index:-100; box-shadow:5px 2px 5px black;">
+<iframe src="http://free.timeanddate.com/clock/i7nd34er/n190/tlec4/tct/pct/tt0" frameborder="0" width="295" height="19" style="position: absolute;right: 12%;top: 70%" allowTransparency="true"></iframe>
+
+ </p:panel>
+		   <p:slideMenu style="position:absolute;top: 23%; width: 200px; right: 86%; border-radius: 0px; border:none" >
+   		<p:menuitem style="margin: 4px " value="Inicio" icon="fa fa-home" url="menuRegistrado.jsf"/>
+        <p:menuitem style="margin: 4px " value="Configurar Cuenta" update="messages" icon="fa fa-user" url="actualizarDatosRegistrado.jsf" />
+        <p:menuitem style="margin: 4px " value="Reportes Generales" icon="fa fa-folder-open" url="reportesGenerales.jsf"/>
+        <p:menuitem style="margin: 4px " value="Reportes Categoría" icon="fa fa-folder-open" url="reportesCategoria.jsf"/>
+        <p:menuitem style="margin: 4px " value="Reportes Gráficos" icon="fa fa-pie-chart" url="reportesGraficos.jsf" />
+        <p:menuitem style="margin: 4px " value="Cerrar Sesión" icon="fa fa-sign-out" url="iniciarSesion.jsf" />
+    </p:slideMenu>    
+
+	<script type="text/javascript">
+    function skinRadarChart() {
+        Chart.defaults.global.startAngle = 36;
+        Chart.defaults.global.tooltips.cornerRadius = 3;
+        Chart.defaults.global.tooltips.enabled = true;
+        Chart.defaults.global.tooltips.mode = 'point';
+        Chart.defaults.global.tooltips.position = 'nearest';
+    }
+</script>
+
+	<!-- Ejemplo 2 <div class="card" style="position: absolute; right: 57.5%; width: 25%;top: 32%;">
+    <p:radarChart model="#{radar.radarModel2}"/>
+</div> -->
+
+	
+
+	<h:commandButton title="Hola" image="img/bell.png"
+		style="outline:none;position: absolute; right: 21%; width: 2%; top: 5%" />
+	<h1
+		style="background-color: red; width: 1%; right: 21%; position: absolute; text-align: center; color: white; border-radius: 80%; font-size: 13px; top: 27px; font-family: arial">2</h1>
+
+	<h:commandButton title="Hola" image="img/correo.png"
+		style="outline:none;position: absolute; right: 25%; width: 2%; top: 5%" />
+	<h1
+		style="background-color: red; width: 1%; right: 24.5%; position: absolute; text-align: center; color: white; border-radius: 80%; font-size: 13px; top: 27px; font-family: arial">6</h1>
+<p:panel id="panel" style="width: 1200px; position: relative; right: -275px; top: 200px; height: 65px">
+
+	<div class="card">
+		
+
+     <!--   // LISTA GENERADA EN LA CLASE REPORTE , FILTER NOS AYUDA A FILTAR POR CADA ATRIBUTO DE LA ENTIDAD  -->
+		<p:dataTable id="tbl"
+			style="width: 100%; position: absolute; top: 120%; right: 0%" var="p"
+			value="#{reporte.reportesFiltro()}" paginator="true" rows="10">
+			<p:column style="width: 12%" headerText="Num Incidente" filterBy="#{p.numeroIncidente}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.numeroIncidente}" />
+			</p:column>
+			<p:column headerText="Victima" filterBy="#{p.nombreVictima}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.nombreVictima}"/>
+			</p:column>
+			<p:column headerText="Tipo de incidente" filterBy="#{p.tipoIncidente}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.tipoIncidente}" />
+			</p:column>
+			<p:column headerText="Descripción de llamada" filterBy="#{p.descripcionLlamada}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.descripcionLlamada}" />
+			</p:column>
+			<p:column style="width: 8%" headerText="Distrito" filterBy="#{p.distritoConsejo}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.distritoConsejo}" />
+			</p:column>
+			<p:column headerText="Ubicación" filterBy="#{p.ubicacion}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.ubicacion}" />
+			</p:column>
+			<p:column headerText="Modus operandi" filterBy="#{p.modusOperandi}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.modusOperandi}" />
+			</p:column>
+			<p:column style="width: 8%" headerText="División" filterBy="#{p.nombreDivision}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.nombreDivision}" />
+			</p:column>
+			<p:column style="width: 5%" headerText="Dia" filterBy="#{p.dia}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.dia}" />
+			</p:column>
+				<p:column style="width: 5%" headerText="Mes" filterBy="#{p.mes}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.mes}" />
+			</p:column>
+				<p:column style="width: 5%" headerText="Año" filterBy="#{p.anio}" filterMatchMode="contains">
+				<p:outputLabel value="#{p.anio}" />
+			</p:column>
+		</p:dataTable>
+	</div>
+		<p style="position:absolute;top: -10px;font-weight:bolder; right: 50%">Herramientas</p>
+	
+                <p:commandButton ajax="false" value="PDF" icon="fa fa-file-pdf-o" style="outline:none;position: absolute; right: 40%; width: 8%; top: 50%">
+	<!--  //TYPE= FORMATO DE GENERACION DEL ARCHIVO , TARGET = TLB( DATATABLE ID ) -->
+	 
+			<p:dataExporter type="pdf" target="tbl" fileName="reportes" />
+		</p:commandButton>
+		<p:commandButton style="position: absolute; top: 50%;right: 60%" value="Limpiar" action="#{reporte.refrescar()}" icon="fa fa-eraser" />
+	</p:panel>
+	
+
+</h:form>
+</h:body>
+</html>

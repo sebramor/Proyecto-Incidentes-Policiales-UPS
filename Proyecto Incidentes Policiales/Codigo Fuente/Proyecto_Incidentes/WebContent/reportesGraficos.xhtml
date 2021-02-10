@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+<h:head>
+<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<title>Dallas - Texas</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:growl id="messages" showDetail="true" />
+
+
+<p style="font-family: 'Segoe UI';position:absolute; top: 20px; right: 190px;font-weight: bold;">#{login.nombreUsuario()}</p>
+<p style="font-family: 'Segoe UI';position:absolute; top: 40px; right: 192px;">#{login.consultarUsuario()}</p>
+<img style="position:absolute; width: 5%; border-radius: 75px; right: 6%;top:3%" src="img/usuario.jpg"/>
+		<img
+			style="position: absolute; width: 5.5%; border-radius: 75px; right: 77%; top: 2%"
+			src="img/logo_policia.png" />
+		<img
+			style="position: absolute; width: 15%; border-radius: 75px; right: 62%; top: 3%"
+			src="img/head-dallas.png" />
+		<p:panel
+			style="width:10%; height:15%; top: 0%; position:absolute; width: 1275px; right: 0%; border-radius: 0px;border: line; z-index:-100; box-shadow:5px 5px 5px #d3d3d3;">
+			<iframe
+				src="http://free.timeanddate.com/clock/i7nd34er/n190/tlec4/tct/pct/tt0"
+				frameborder="0" width="295" height="19"
+				style="position: absolute; right: 12%; top: 70%"
+				allowTransparency="true"></iframe>
+
+		</p:panel>
+		   <p:slideMenu style="position:absolute;top: 23%; width: 200px; right: 86%; border-radius: 0px; border:none" >
+   		<p:menuitem style="margin: 4px " value="Inicio" icon="fa fa-home" url="menuRegistrado.jsf"/>
+        <p:menuitem style="margin: 4px " value="Configurar Cuenta" update="messages" icon="fa fa-user" url="actualizarDatosRegistrado.jsf" />
+        <p:menuitem style="margin: 4px " value="Reportes Generales" icon="fa fa-folder-open" url="reportesGenerales.jsf"/>
+        <p:menuitem style="margin: 4px " value="Reportes Categoría" icon="fa fa-folder-open" url="reportesCategoria.jsf"/>
+        <p:menuitem style="margin: 4px " value="Reportes Gráficos" icon="fa fa-pie-chart" url="reportesGraficos.jsf" />
+        <p:menuitem style="margin: 4px " value="Cerrar Sesión" icon="fa fa-sign-out" url="iniciarSesion.jsf" />
+    </p:slideMenu>    
+
+	<script type="text/javascript">
+    function skinRadarChart() {
+        Chart.defaults.global.startAngle = 36;
+        Chart.defaults.global.tooltips.cornerRadius = 3;
+        Chart.defaults.global.tooltips.enabled = true;
+        Chart.defaults.global.tooltips.mode = 'point';
+        Chart.defaults.global.tooltips.position = 'nearest';
+    }
+</script>
+
+	<!-- Ejemplo 2 <div class="card" style="position: absolute; right: 57.5%; width: 25%;top: 32%;">
+    <p:radarChart model="#{radar.radarModel2}"/>
+</div> -->
+
+	
+
+	<h:commandButton title="Hola" image="img/bell.png"
+		style="outline:none;position: absolute; right: 21%; width: 2%; top: 5%" />
+	<h1
+		style="background-color: red; width: 1%; right: 21%; position: absolute; text-align: center; color: white; border-radius: 80%; font-size: 13px; top: 27px; font-family: arial">2</h1>
+
+	<h:commandButton title="Hola" image="img/correo.png"
+		style="outline:none;position: absolute; right: 25%; width: 2%; top: 5%" />
+	<h1
+		style="background-color: red; width: 1%; right: 24.5%; position: absolute; text-align: center; color: white; border-radius: 80%; font-size: 13px; top: 27px; font-family: arial">6</h1>
+<p:panel id="panel" style="width: 1200px; position: relative; right: -275px; top: 130px; height: 150px">
+
+		<p style="position:absolute;top: -10px;font-weight:bolder; right: 45%">Filtro de búsquedas</p>
+		<p style="font-size: 16px;font-color:#848984; position:relative;top: 10px; width:20%">Tipo de incidente</p>
+                <p:selectOneMenu id="group" value="#{barra.tipoIncidente}">
+                    <f:selectItem itemLabel="--Seleccione--" itemValue=""/>
+                   <f:selectItem itemLabel="Investigaciones" itemValue="INVESTIGATION"/>
+                   <f:selectItem itemLabel="Accidentes" itemValue="ACCIDENT"/>
+                   <f:selectItem itemLabel="Desorden Público" itemValue="DISORDER"/>
+                   <f:selectItem itemLabel="Muertes" itemValue="DEATH"/>
+                   <f:selectItem itemLabel="Robo" itemValue="ASSAULT"/>
+                   <f:selectItem itemLabel="Violencia" itemValue="VIOLENCE"/>
+                   <f:selectItem itemLabel="Propiedades" itemValue="PROPERTY"/>
+                   <f:selectItem itemLabel="Intimidación" itemValue="HARASSMENT"/> 
+                </p:selectOneMenu>
+         <p style="font-size: 16px;font-color:#848984; position:relative;top: -70px; right: -250px;width:10%">Distrito</p>
+                <p:selectOneMenu id="group2" value="#{barra.distritoConsejo}" style="right: -250px;top:-80px">
+                    <f:selectItem itemLabel="--Seleccione--" itemValue=""/>
+                   <f:selectItem itemLabel="D1" itemValue="D1"/>
+                   <f:selectItem itemLabel="D2" itemValue="D2"/>
+                   <f:selectItem itemLabel="D3" itemValue="D3"/>
+                   <f:selectItem itemLabel="D4" itemValue="D4"/>
+                   <f:selectItem itemLabel="D5" itemValue="D5"/>
+                </p:selectOneMenu>
+         <p style="font-size: 16px;font-color:#848984; position:relative;top: -150px; right: -480px;width:10%">Oficial</p>
+                <p:selectOneMenu id="group3" value="#{barra.nombreOficial}" style="right: -480px;top:-160px">
+                    <f:selectItem itemLabel="--Seleccione--" itemValue=""/>
+                   <f:selectItem itemLabel="Perez,Michael" itemValue="PEREZ,MICHAEL"/>
+                   <f:selectItem itemLabel="Bradley,Paul" itemValue="BRADLEY,PAUL"/>
+                   <f:selectItem itemLabel="Allison,Troy,Lee" itemValue="ALLISON,TROY,LEE"/>
+                   <f:selectItem itemLabel="Harris,Darin" itemValue="HARRIS,DARIN"/>
+                   <f:selectItem itemLabel="Rojas,Pablo" itemValue="ROJAS,PABLO"/>
+                </p:selectOneMenu>
+         <p style="font-size: 16px;font-color:#848984; position:absolute;top: 18%; right: 35%">Fecha</p>
+       <div class="p-field p-col-12 p-md-4"
+		style="position: absolute; right: 20%; top: 42%">
+		<p:datePicker id="navigator" placeholder="--Seleccione--"
+			monthNavigator="true"
+			yearNavigator="true" value="#{barra.fecha}" />
+	</div>
+	 <p style="font-size: 16px;font-color:#848984; position:absolute;top: 18%; right: 10.5%">División</p>
+	<p:selectOneMenu id="group4" value="#{barra.nombreDivision}" style="position:absolute; right: 2%;top:42%">
+                    <f:selectItem itemLabel="--Seleccione--" itemValue=""/>
+                   <f:selectItem itemLabel="North Central" itemValue="NORTH CENTRAL"/>
+                   <f:selectItem itemLabel="Central" itemValue="CENTRAL"/>
+                   <f:selectItem itemLabel="Northeast" itemValue="NORTHEAST"/>
+                   <f:selectItem itemLabel="Southeast" itemValue="SOUTHEAST"/>
+                   <f:selectItem itemLabel="South Central" itemValue="SOUTH CENTRAL"/>
+                </p:selectOneMenu>
+                <p:button href="docs/Reporte_Incidentes_2016.pdf" style="outline:none;position: absolute; right: 40%; width: 8%; top: 73%" target="_blank"  icon="fa fa-file-pdf-o" value="PDF" > </p:button>
+                <p:commandButton style="position: relative; top: -110px; right: -100px" value="Buscar" action="#{barra.createBarModel()}" icon="fa fa-search"  update="panel"/>
+                <p:commandButton style="position: relative; top: -110px; right: -150px" value="Limpiar" action="#{barra.refrescarGrafico()}" icon="fa fa-eraser"  />
+               
+	
+	<div class="card" style="width: 50%; top: 100%;right:20%;position:absolute;">
+    <p:barChart model="#{barra.barModel}" style="width: 80%; height: 350px;"/>
+</div>
+	</p:panel>
+	
+<p:panel id="hpnl" style="background: linear-gradient(to bottom right, #566573 , #212F3D  );;width:10%; height:10%; top: 20%; position:absolute; width: 350px; right: 3%; border-radius: 0px;z-index:-100; border-radius: 5px;">
+ <img style="width: 24%" src="img/choque.png"></img>
+ <p style="color:white;position: absolute; top: 30%; right: 8%; font-weight: bold;">Total reportes accidentes</p>
+  <p style="color:white;position: absolute; top: -25px ; right: 35%;font-size: 30px">59</p>
+ </p:panel> 
+ <p:draggable for="hpnl" axis="x"/>
+  
+  
+</h:form>
+</h:body>
+</html>
